@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+/* distribucion de reloj y iconos */
+
+.contenedor {
+  display: grid;
+  grid-template-areas: "clock icons" "clock icons" "clock icons";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 60vh;
+  margin: 10% 5%;
+}
+
+/* lado derecho (reloj) */
+
+#contenedor-time {
+  /* background: #ffd; */
+  grid-area: clock;
+  width: 100% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #000;
+}
+
+#contenedor-reloj {
+  font-size: 7rem;
+}
+
+#contenedor-fecha {
+  font-size: 1.5rem;
+}
+
+/* Lado derecho (iconos) */
+
+.contenedor-icons {
+  display: grid;
+  grid-area: icons;
+  grid-template-areas: "icon1" "icon2" "icon3";
+  margin-left: 2%;
+  gap: 1px;
+  align-items: center;
+}
+
+.icon {
+  margin: 0;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.icon1 {
+  grid-area: icon1;
+  background: #f00;
+}
+
+.icon2 {
+  grid-area: icon2;
+  background: #0f0;
+}
+
+.icon3 {
+  grid-area: icon3;
+  background: #00f;
+}
