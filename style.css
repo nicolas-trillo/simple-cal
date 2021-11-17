@@ -106,3 +106,9 @@ body {
   content: "";
   width: 1rem;
 }
+
+/* Scroll Icons */
+.contenedor-icons {
+  height: 32rem;
+  overflow-y: scroll;
+}
