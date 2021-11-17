@@ -97,6 +97,18 @@ body {
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: left;
+  transition: transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  -moz-transition: transform 0.2s ease;
+  -ms-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+}
+.svg-cont:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
 }
 .icon-inner {
   display: flex;
@@ -117,40 +129,26 @@ body {
 .svg-classr {
   background-image: url(./assets/classr.png);
 }
+.svg-meet {
+  background-position: right;
+  align-self: flex-start;
+  background-size: contain;
+}
+.buffer {
+  flex-grow: 2;
+}
 
 /* Scroll Icons */
 .contenedor-icons {
   height: 32rem;
   overflow-y: scroll;
   position: relative;
-  overflow-x: hidden;
 }
-.gradiente {
-  height: 1.5rem;
-  width: 100%;
-  background: rgb(255, 255, 255);
+
+/* Para meet inactivo */
+.inactive {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  opacity: 80%;
   pointer-events: none;
-  display: none;
-}
-.gradiente-abajo {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 90%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-.gradiente-arriba {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 90%,
-    rgba(255, 255, 255, 1) 100%
-  );
 }

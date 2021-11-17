@@ -9,7 +9,7 @@ function tiempo(){
     ap = (horas < 12) ? '<span>AM</span>' : '<span>PM</span>' 
     document.getElementById('reloj').innerHTML = horas + ':'+ min 
 
-    var dias = ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'] 
+    var dias = ['Dom', 'Lun','Mar','Mie','Jue','Vie','Sab'] 
     var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']  
     var numDia = ahora.getDate();
     var slDias = dias[ahora.getDay()];
@@ -19,7 +19,12 @@ function tiempo(){
     document.getElementById('fecha').innerHTML = fecha;
 
     // var time = setTimeout(function(){ startTime() }, 500);
-    var time = setTimeout(()=>tiempo(),500)
+    var time = setTimeout(()=>tiempo(),1000)
+
+    // Cambié el valor de timeout de la var time a 1000, para que
+    // la fecha se refrezque cada segundo en vez de cada medio 
+    // segundo.
+
 }
 function cero(i) {
     if (i < 10) {
