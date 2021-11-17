@@ -93,6 +93,10 @@ body {
   width: 6rem;
   display: flex;
   justify-content: flex-start;
+  background-size: contain;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 .icon-inner {
   display: flex;
@@ -106,9 +110,47 @@ body {
   content: "";
   width: 1rem;
 }
+/* Svg dinmámico */
+.svg-meet {
+  background-image: url(./assets/meet.png);
+}
+.svg-classr {
+  background-image: url(./assets/classr.png);
+}
 
 /* Scroll Icons */
 .contenedor-icons {
   height: 32rem;
   overflow-y: scroll;
+  position: relative;
+  overflow-x: hidden;
+}
+.gradiente {
+  height: 1.5rem;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  pointer-events: none;
+  display: none;
+}
+.gradiente-abajo {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.gradiente-arriba {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
