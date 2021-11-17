@@ -16,6 +16,7 @@ a {
   text-decoration: none;
 }
 
+/* Posición de Body */
 body {
   height: 100vh;
   width: 100%;
@@ -24,6 +25,7 @@ body {
   align-items: center;
 }
 
+/* Posición de items dentro de .contenedor */
 .contenedor {
   height: fit-content;
   width: 50%;
@@ -38,6 +40,7 @@ body {
   padding: 0 2rem;
 }
 
+/* Hora y Fecha */
 #contenedor-time {
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +51,6 @@ body {
 #contenedor-fecha {
   width: 100%;
 }
-
 #reloj {
   font-size: 7rem;
   text-align: center;
@@ -58,6 +60,7 @@ body {
   text-align: center;
 }
 
+/* Stack */
 .contenedor-icons {
   display: flex;
   flex-wrap: wrap;
