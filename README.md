@@ -11,7 +11,7 @@ Estilo del stack terminado, añadido esto "inactive" (ver ultima clase como ejem
 ## index.html
 
 Añadido un div "buffer" para mandar el icono de meet a la derecha sin afectar el efecto de zoom al hacer hover.
-Terminado el formato para las clases, el elemento parent es <a href="#" class="icon-cont">
+Reestructurado ligeramente tarjetas.
 
 # PLANES
 
