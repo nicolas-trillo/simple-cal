@@ -13,10 +13,10 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
-    <script src="reloj.js"></script>
-    <script src="./objectspawn.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-  <body onload="tiempo()">
+  <body onload="tiempo(); appendItems()">
+    <script src="app.js"></script>
     <div class="contenedor">
       <div id="contenedor-time">
         <div id="contenedor-reloj">
@@ -26,48 +26,7 @@
           <div id="fecha"></div>
         </div>
       </div>
-      <div class="contenedor-icons">
-        <div class="icon">
-          <a href="#" class="svg-cont svg-classr"></a>
-          <div class="icon-inner re-time-cont"><p>10:09</p></div>
-          <div class="icon-inner re-sepa-cont">|</div>
-          <div class="icon-inner re-data-cont"><p>Tutoría</p></div>
-          <div class="buffer"></div>
-          <a href="#" class="svg-cont svg-meet"></a>
-        </div>
-        <div class="icon">
-          <a href="#" class="svg-cont svg-classr"></a>
-          <div class="icon-inner re-time-cont"><p>10:09</p></div>
-          <div class="icon-inner re-sepa-cont">|</div>
-          <div class="icon-inner re-data-cont"><p>Curso1</p></div>
-          <div class="buffer"></div>
-          <a href="#" class="svg-cont svg-meet"></a>
-        </div>
-        <div class="icon">
-          <a href="#" class="svg-cont svg-classr"></a>
-          <div class="icon-inner re-time-cont"><p>10:09</p></div>
-          <div class="icon-inner re-sepa-cont">|</div>
-          <div class="icon-inner re-data-cont"><p>Curso2</p></div>
-          <div class="buffer"></div>
-          <a href="#" class="svg-cont svg-meet"></a>
-        </div>
-        <div class="icon">
-          <a href="#" class="svg-cont svg-classr"></a>
-          <div class="icon-inner re-time-cont"><p>10:09</p></div>
-          <div class="icon-inner re-sepa-cont">|</div>
-          <div class="icon-inner re-data-cont"><p>Curso3</p></div>
-          <div class="buffer"></div>
-          <a href="#" class="svg-cont svg-meet"></a>
-        </div>
-        <div class="icon">
-          <a href="#" class="svg-cont svg-classr"></a>
-          <div class="icon-inner re-time-cont"><p>10:09</p></div>
-          <div class="icon-inner re-sepa-cont">|</div>
-          <div class="icon-inner re-data-cont"><p>Curso4</p></div>
-          <div class="buffer"></div>
-          <a href="#" class="svg-cont svg-meet inactive"></a>
-        </div>
-      </div>
+      <div class="contenedor-icons"></div>
     </div>
   </body>
 </html>
