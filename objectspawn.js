@@ -9,7 +9,7 @@ function spawn(hora,separador,name){
 
 let documentFragment = document.createDocumentFragment();
 
-    for (let i = 1; i <= 10 ; i++){
+    for (let i = 1; i <= 15 ; i++){
         var timenottime = 10
         var namenoname = 'String'
         const sep = '|'

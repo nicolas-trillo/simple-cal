@@ -9,7 +9,7 @@ function tiempo(){
     ap = (horas < 12) ? '<span>AM</span>' : '<span>PM</span>' 
     document.getElementById('reloj').innerHTML = horas + ':'+ min 
 
-    var dias = ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'] 
+    var dias = ['Dom', 'Lun','Mar','Mie','Jue','Vie','Sab'] 
     var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']  
     var numDia = ahora.getDate();
     var slDias = dias[ahora.getDay()];
