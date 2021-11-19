@@ -124,7 +124,7 @@ function appendItems() {
 
     function createCards(numDiasPorSL) {
         for (let i = 0; i < numDiasPorSL; i++) {
-            $(".contenedor-icons").append(` <a href="google.com" class="icon-a-cont"> <div class="icon"> <div href="#" class="svg-cont svg-classr"></div> <div class="icon-inner re-time-cont"><p>10:09</p></div> <div class="icon-inner re-sepa-cont">|</div> <div class="icon-inner re-data-cont"><p>Curso3</p></div> </div> </a>`);
+            $(".contenedor-icons").append(` <a href="google.com" class="icon-a-cont"> <div class="icon"> <div href="#" class="svg-cont svg-classr"></div> <div class="icon-inner re-time-cont"><p>10:09</p></div> <div class="icon-inner re-sepa-cont">|</div> <div class="icon-inner re-data-cont"><p>String</p></div> </div> </a>`);
           }
         
         return numDiasPorSL
