@@ -109,7 +109,7 @@ classLinks.set('bio', 'https://classroom.google.com/c/NDA4ODYxNzQwOTEz')
 classLinks.set('EFI', 'https://classroom.google.com/c/NDA4ODc1ODk4Nzcz')
 classLinks.set('inA', 'https://classroom.google.com/c/NDE5ODY0OTU5MjY2')
 classLinks.set('inB', '')
-classLinks.set('inC', '')
+classLinks.set('inC', 'https://classroom.google.com/c/NDA4Njk5MjQ1OTkw')
 classLinks.set('EPT', 'https://classroom.google.com/c/NDExNTY0ODYzMzUy')
 classLinks.set('TUT', 'https://classroom.google.com/c/NDA4ODYwNjc3OTg3')
 classLinks.set('fis', 'https://classroom.google.com/c/NDE5ODM2NzczNzUy')
@@ -120,11 +120,15 @@ classLinks.set('ATE', 'https://classroom.google.com/c/NDA4MjYyMjEzMjUx')
 classLinks.set('APL', '')
 classLinks.set('AMU', '')
 
+var link = 'coño.com'
+var time = '10:08'
+var lName = 'coño'
+
 function appendItems() {     
 
     function createCards(numDiasPorSL) {
         for (let i = 0; i < numDiasPorSL; i++) {
-            $(".contenedor-icons").append(` <a href="google.com" class="icon-a-cont"> <div class="icon"> <div href="#" class="svg-cont svg-classr"></div> <div class="icon-inner re-time-cont"><p>10:09</p></div> <div class="icon-inner re-sepa-cont">|</div> <div class="icon-inner re-data-cont"><p>String</p></div> </div> </a>`);
+            $(".contenedor-icons").append(`<a href="${link}" class="icon-a-cont"> <div class="icon"> <div class="svg-cont svg-classr"></div> <div class="icon-inner re-time-cont"><p>${time}</p></div> <div class="icon-inner re-sepa-cont">|</div> <div class="icon-inner re-data-cont"><p>${lName}</p></div> </div> </a>`);
           }
         
         return numDiasPorSL
@@ -150,38 +154,3 @@ function appendItems() {
     }
  
 }
-
-
-
-/* 
-
-map1.get('a')
-
-const expr = 'Papayas';
-switch (expr) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
-    break;
-  case 'Mangoes':
-  case 'Papayas':
-    console.log('Mangoes and papayas are $2.79 a pound.');
-    // expected output: "Mangoes and papayas are $2.79 a pound."
-    break;
-  default:
-    console.log(`Sorry, we are out of ${expr}.`);
-}
-
-for (let i = 0; i < 9; i++) {
-  str = str + i;
-}
-
-<div class="icon">
-  <a href="#" class="svg-cont svg-classr"></a>
-  <div class="icon-inner re-time-cont"><p>10:09</p></div>
-  <div class="icon-inner re-sepa-cont">|</div>
-  <div class="icon-inner re-data-cont"><p>Curso3</p></div>
-  <div class="buffer"></div>
-  <a href="#" class="svg-cont svg-meet"></a>
-</div> 
-
-*/
