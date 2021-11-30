@@ -21,6 +21,11 @@ function tiempo(){
 
     var time = setTimeout(()=>tiempo(),1000)
 
+    function playAudio(){
+        var audio = new Audio('./assets/morse.mp3')
+        audio.play();
+    }
+
 
     function notificacion(){
         const boton = document.querySelector('#cbx');
@@ -28,18 +33,23 @@ function tiempo(){
         if(boton.checked && Notification.permission == 'granted'){
             if(horas==07&&min==59&&seg==59){
                 new Notification('Modo y orden')
+                playAudio();
             }
             if(horas==08&&min==24&&seg==59){
                 new Notification('Tienes clases animal')
+                playAudio();    
             }
             if(horas==09&&min==19&&seg==59){
                 new Notification('Toca algo')
+                playAudio();    
             }
             if(horas==10&&min==24&&seg==59){
                 new Notification('Deja de jugar animal')
+                playAudio();    
             }
             if(horas==11&&min==19&&seg==59){
                 new Notification('Ya solo falta esta')
+                playAudio();    
             }
         }
     
