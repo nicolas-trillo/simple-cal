@@ -21,6 +21,30 @@ function tiempo(){
 
     var time = setTimeout(()=>tiempo(),1000)
 
+
+    function notificacion(){
+        const boton = document.querySelector('#cbx');
+        Notification.requestPermission()
+        if(boton.checked && Notification.permission == 'granted'){
+            if(horas==07&&min==59&&seg==59){
+                new Notification('Modo y orden')
+            }
+            if(horas==08&&min==24&&seg==59){
+                new Notification('Tienes clases animal')
+            }
+            if(horas==09&&min==19&&seg==59){
+                new Notification('Toca algo')
+            }
+            if(horas==10&&min==24&&seg==59){
+                new Notification('Deja de jugar animal')
+            }
+            if(horas==11&&min==19&&seg==59){
+                new Notification('Ya solo falta esta')
+            }
+        }
+    
+    }
+    notificacion()
 }
 function cero(i) {
     if (i < 10) {
