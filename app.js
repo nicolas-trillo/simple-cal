@@ -51,10 +51,6 @@ function tiempo(){
                 new Notification('Ya solo falta esta')
                 playAudio();    
             }
-            if(horas==11&&min==02&&seg==59){
-                new Notification('Ya solo falta esta')
-                playAudio();    
-            }
         }
     
     }
