@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body onload="tiempo(); appendItems()">
@@ -24,12 +25,17 @@
         </div>
         <div id="contenedor-fecha">
           <div id="fecha"></div>
+          <div class="contenedor-boton">
+            <input id='cbx'type="checkbox" ></input>
+          </div>
         </div>
+
       </div>
       <div class="contenedor-icons"></div>
     </div>
-    <div class="contenedor-boton">
-      <input id='cbx'type="checkbox"></input>
+
+    <div class="contenedor-dark-mode">
+      <input type="checkbox" id="asdf" onclick="myFunction()">
     </div>
   </body>
 </html>
