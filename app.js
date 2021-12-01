@@ -311,3 +311,21 @@ function appendItems() {
     }
  
 }
+
+function myFunction() {
+    var element = document.body;
+    const boton = document.querySelector('#asdf');
+    element.classList.toggle("dark-mode");
+    if(boton.checked){
+        $('a').children('div').addClass("dark-mode-icon")
+        $('.icon').children('div').addClass("dark-mode-letter")
+        $('.icon-inner').children('p').addClass("dark-mode-letter")
+        $('.contenedor-icons').addClass("dark-mode-line")
+    }
+    if(boton.checked == false){
+        $('a').children('div').removeClass("dark-mode-icon")
+        $('.icon').children('div').removeClass("dark-mode-letter")
+        $('.icon-inner').children('p').removeClass("dark-mode-letter")
+        $('.contenedor-icons').removeClass("dark-mode-line")
+    }
+  }
