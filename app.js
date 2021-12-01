@@ -36,19 +36,19 @@ function tiempo(){
                 playAudio();
             }
             if(horas==08&&min==24&&seg==59){
-                new Notification('Tienes clases animal')
+                new Notification('Tienes clases')
                 playAudio();    
             }
             if(horas==09&&min==19&&seg==59){
-                new Notification('Toca algo')
+                new Notification('Deja de jugar')
                 playAudio();    
             }
             if(horas==10&&min==24&&seg==59){
-                new Notification('Deja de jugar animal')
+                new Notification('Deja de jugar')
                 playAudio();    
             }
             if(horas==11&&min==19&&seg==59){
-                new Notification('Ya solo falta esta')
+                new Notification('Tienes clase')
                 playAudio();    
             }
         }
