@@ -175,6 +175,9 @@ body {
   .contenedor-boton {
     display: none;
   }
+  .contenedor-toggles {
+    padding-right: 2rem;
+  }
 }
 
 .icon-a-cont {
@@ -235,12 +238,6 @@ body {
 
 /* boton switch */
 
-.contenedor-boton {
-  position: absolute;
-  top: 5rem;
-  right: 5rem;
-}
-
 .contenedor-boton input[type="checkbox"] {
   position: relative;
   -webkit-appearance: none;
@@ -276,19 +273,18 @@ body {
 /* dark mode */
 
 body {
-  padding: 25px;
   background-color: white;
   color: black;
-  font-size: 25px;
+  font-size: 2.5rem;
 }
 
 .dark-mode {
-  background-color: rgba(0, 0, 0, 0.97);
+  background-color: rgb(19, 18, 18);
   color: white;
 }
 
 .dark-mode-icon {
-  background: rgb(100, 98, 98);
+  background: rgb(30, 30, 30);
 }
 
 .dark-mode-letter {
@@ -305,13 +301,8 @@ body {
   height: 80px;
   width: 80px;
   -webkit-appearance: none;
-  box-shadow: 5px 5px 10px rgba(70, 70, 70, 0.12);
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 10%;
-  left: 6%;
-  border-radius: 50%;
-  border: 8px solid #d8d8d8;
   outline: none;
   display: flex;
   align-items: center;
@@ -320,11 +311,43 @@ body {
 
 .contenedor-dark-mode input[type="checkbox"]::after {
   font-family: FontAwesome;
-  content: "\f011";
+  content: "\f186";
   color: #7a7a7a;
-  font-size: 50px;
+  font-size: 5rem;
 }
 
 .contenedor-dark-mode input[type="checkbox"]:checked::after {
   color: white;
+  content: "\f185";
+}
+
+/* TRANSICIONES */
+* {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+/* Posicion toggles */
+
+.contenedor-toggles {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+  padding-right: 6rem;
+  align-items: center;
+  height: fit-content;
+}
+.contenedor-dark-mode {
+  width: fit-content;
+  height: fit-content;
+  margin-right: 5rem;
+}
+.contenedor-dark-mode *,
+.contenedor-boton * {
+  cursor: pointer;
 }
