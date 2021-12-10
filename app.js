@@ -1,5 +1,5 @@
 
-function tiempo(){
+function tiempo() {
     var ahora = new Date();
     var horas = ahora.getHours();
     var min = ahora.getMinutes();
@@ -7,11 +7,11 @@ function tiempo(){
     horas = cero(horas)
     min = cero(min)
     seg = cero(seg)
-    ap = (horas < 12) ? '<span>AM</span>' : '<span>PM</span>' 
-    document.getElementById('reloj').innerHTML = horas + ':'+ min 
+    ap = (horas < 12) ? '<span>AM</span>' : '<span>PM</span>'
+    document.getElementById('reloj').innerHTML = horas + ':' + min
 
-    var dias = ['Dom', 'Lun','Mar','Mie','Jue','Vie','Sab'] 
-    var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']  
+    var dias = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
+    var meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
     var numDia = ahora.getDate();
     var slDias = dias[ahora.getDay()];
     var slMeses = meses[ahora.getMonth()];
@@ -19,42 +19,58 @@ function tiempo(){
     var fecha = `${slDias} ${numDia} ${slMeses}`
     document.getElementById('fecha').innerHTML = fecha;
 
-    var time = setTimeout(()=>tiempo(),1000)
+    var time = setTimeout(() => tiempo(), 1000)
 
-    function playAudio(){
+    function playAudio() {
         var audio = new Audio('./assets/morse.mp3')
         audio.play();
     }
 
+    var notificationTrigger = true
 
-    function notificacion(){
-        const boton = document.querySelector('#cbx');
-        Notification.requestPermission()
-        if(boton.checked && Notification.permission == 'granted'){
-            if(horas==07&&min==59&&seg==59){
+    function checkDate() {
+        switch (slDias) {
+            case 'Sab':
+                notificationTrigger = false
+                break;
+            case 'Dom':
+                notificationTrigger = false
+                break;
+            default:
+                notificationTrigger = true
+                break;
+        }
+    }
+
+
+    function notificacion() {
+        Notification.requestPermission();
+        checkDate();
+        if (Notification.permission == 'granted') {
+            if (horas == 07 && min == 59 && seg == 59) {
                 new Notification('Modo y orden')
                 playAudio();
             }
-            if(horas==08&&min==24&&seg==59){
+            if (horas == 08 && min == 24 && seg == 59) {
                 new Notification('Tienes clases')
-                playAudio();    
+                playAudio();
             }
-            if(horas==09&&min==19&&seg==59){
+            if (horas == 09 && min == 19 && seg == 59) {
                 new Notification('Deja de jugar')
-                playAudio();    
+                playAudio();
             }
-            if(horas==10&&min==24&&seg==59){
+            if (horas == 10 && min == 24 && seg == 59) {
                 new Notification('Deja de jugar')
-                playAudio();    
+                playAudio();
             }
-            if(horas==11&&min==19&&seg==59){
+            if (horas == 11 && min == 19 && seg == 59) {
                 new Notification('Tienes clase')
-                playAudio();    
+                playAudio();
             }
         }
-    
+
     }
-    notificacion()
+    notificacion();
 }
 function cero(i) {
     if (i < 10) {
@@ -71,8 +87,8 @@ horas = cero(horas)
 min = cero(min)
 seg = cero(seg)
 
-var dias = ['Dom', 'Lun','Mar','Mie','Jue','Vie','Sab'] 
-var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']  
+var dias = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
+var meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 var numDia = ahora.getDate();
 var slDias = dias[ahora.getDay()];
 var slMeses = meses[ahora.getMonth()];
@@ -178,54 +194,54 @@ classLinks.set('APL', 'https://classroom.google.com/c/MzQ2NTc5MTYzMjkx')
 classLinks.set('AMU', 'https://classroom.google.com/c/MjI2OTk4Mjk1MTQy')
 
 const LinksLun = new Map()
-LinksLun.set(0,extrac('MYO'))
-LinksLun.set(1,extrac('mat'))
-LinksLun.set(2,extrac('com'))
-LinksLun.set(3,extrac('inA'))
-LinksLun.set(4,extrac('inB'))
-LinksLun.set(5,extrac('inC'))
-LinksLun.set(6,extrac('ATE'))
-LinksLun.set(7,extrac('APL'))
-LinksLun.set(8,extrac('AMU'))
+LinksLun.set(0, extrac('MYO'))
+LinksLun.set(1, extrac('mat'))
+LinksLun.set(2, extrac('com'))
+LinksLun.set(3, extrac('inA'))
+LinksLun.set(4, extrac('inB'))
+LinksLun.set(5, extrac('inC'))
+LinksLun.set(6, extrac('ATE'))
+LinksLun.set(7, extrac('APL'))
+LinksLun.set(8, extrac('AMU'))
 
 const LinksMar = new Map()
-LinksMar.set(0,extrac('MYO'))
-LinksMar.set(1,extrac('QAP'))
-LinksMar.set(2,extrac('MAP'))
-LinksMar.set(3,extrac('CAP'))
-LinksMar.set(4,extrac('inA'))
-LinksMar.set(5,extrac('inB'))
-LinksMar.set(6,extrac('inC'))
-LinksMar.set(7,extrac('bio'))
-LinksMar.set(8,extrac('fis'))
+LinksMar.set(0, extrac('MYO'))
+LinksMar.set(1, extrac('QAP'))
+LinksMar.set(2, extrac('MAP'))
+LinksMar.set(3, extrac('CAP'))
+LinksMar.set(4, extrac('inA'))
+LinksMar.set(5, extrac('inB'))
+LinksMar.set(6, extrac('inC'))
+LinksMar.set(7, extrac('bio'))
+LinksMar.set(8, extrac('fis'))
 
 const LinksMie = new Map()
-LinksMie.set(0,extrac('MYO'))
-LinksMie.set(1,extrac('TUT'))
-LinksMie.set(2,extrac('CSO'))
-LinksMie.set(3,extrac('EPT'))
-LinksMie.set(4,extrac('inA'))
-LinksMie.set(5,extrac('inB'))
-LinksMie.set(6,extrac('inC'))
+LinksMie.set(0, extrac('MYO'))
+LinksMie.set(1, extrac('TUT'))
+LinksMie.set(2, extrac('CSO'))
+LinksMie.set(3, extrac('EPT'))
+LinksMie.set(4, extrac('inA'))
+LinksMie.set(5, extrac('inB'))
+LinksMie.set(6, extrac('inC'))
 
 const LinksJue = new Map()
-LinksJue.set(0,extrac('MYO'))
-LinksJue.set(1,extrac('EFI'))
-LinksJue.set(2,extrac('mat'))
-LinksJue.set(3,extrac('bio'))
-LinksJue.set(4,extrac('rel'))
+LinksJue.set(0, extrac('MYO'))
+LinksJue.set(1, extrac('EFI'))
+LinksJue.set(2, extrac('mat'))
+LinksJue.set(3, extrac('bio'))
+LinksJue.set(4, extrac('rel'))
 
 const LinksVie = new Map()
-LinksVie.set(0,extrac('MYO'))
-LinksVie.set(1,extrac('CSO'))
-LinksVie.set(2,extrac('mat'))
-LinksVie.set(3,extrac('com'))
-LinksVie.set(4,extrac('mat'))
+LinksVie.set(0, extrac('MYO'))
+LinksVie.set(1, extrac('CSO'))
+LinksVie.set(2, extrac('mat'))
+LinksVie.set(3, extrac('com'))
+LinksVie.set(4, extrac('mat'))
 
-const arrayDeDias = [Lun,Mar,Mie,Jue,Vie]
+const arrayDeDias = [Lun, Mar, Mie, Jue, Vie]
 lName = [];
 
-switch(slDias){
+switch (slDias) {
     case 'Lun':
         for (let i = 0; i < Lun.size; i++) {
             lName[i] = arrayDeDias[0].get(i)
@@ -257,40 +273,40 @@ switch(slDias){
     case 'Dom':
         console.log('Hoy es domingo')
         break;
-    default: 
+    default:
         console.log('fallo')
         break;
 }
 
-function extrac(nombre){
+function extrac(nombre) {
     let lc = classLinks.get(nombre)
     return lc
 }
 
-function noSchool(){
+function noSchool() {
     $(".contenedor-icons").append(`<a class='cont-no'> HOY NO HAY CLASES </a>`)
 }
 
-function appendItems() {     
+function appendItems() {
     function createCards(numDiasPorSL) {
-            for (let i = 0; i < numDiasPorSL; i++) {
-                
-                var link = ''
-                var tim = ''
+        for (let i = 0; i < numDiasPorSL; i++) {
 
-                lName[1]=='Matemática'?link=LinksLun.get(i):lName[1]=='Tutoría'?link=LinksMie.get(i):lName[1]=='Ed. Fis.'?link=LinksJue.get(i):lName[1]=='Comunicación'?link=LinksVie.get(i):lName[1]=='Quimica AP'?link=LinksMar.get(i):console.log('fallo')
+            var link = ''
+            var tim = ''
 
-                lName.length==5?tim=times.get(i):lName.length == 7?tim = times7.get(i): lName.length==9&&lName[1]=='Matemática'?tim = times91.get(i):lName.length==9 && lName[1]!='Matemática'?tim=times92.get(i):console.log('ostia algo fallo')
+            lName[1] == 'Matemática' ? link = LinksLun.get(i) : lName[1] == 'Tutoría' ? link = LinksMie.get(i) : lName[1] == 'Ed. Fis.' ? link = LinksJue.get(i) : lName[1] == 'Comunicación' ? link = LinksVie.get(i) : lName[1] == 'Quimica AP' ? link = LinksMar.get(i) : console.log('fallo')
 
-                $(".contenedor-icons").append(`<a href="${link}" class="icon-a-cont" target="_blank"> <div class="icon"> <div class="svg-cont svg-classr"></div> <div class="icon-inner re-time-cont"><p>${tim}</p></div> <div class="icon-inner re-sepa-cont">|</div> <div class="icon-inner re-data-cont"><p>${lName[i]}</p></div> </div> </a>`);
-          }
-        
+            lName.length == 5 ? tim = times.get(i) : lName.length == 7 ? tim = times7.get(i) : lName.length == 9 && lName[1] == 'Matemática' ? tim = times91.get(i) : lName.length == 9 && lName[1] != 'Matemática' ? tim = times92.get(i) : console.log('ostia algo fallo')
+
+            $(".contenedor-icons").append(`<a href="${link}" class="icon-a-cont" target="_blank"> <div class="icon"> <div class="svg-cont svg-classr"></div> <div class="icon-inner re-time-cont"><p>${tim}</p></div> <div class="icon-inner re-sepa-cont">|</div> <div class="icon-inner re-data-cont"><p>${lName[i]}</p></div> </div> </a>`);
+        }
+
         return numDiasPorSL
     }
 
     const slDiasCount = slDias;
     switch (slDiasCount) {
-        case "Lun": 
+        case "Lun":
             createCards(Lun.size);
             break;
         case "Mar":
@@ -309,23 +325,23 @@ function appendItems() {
             noSchool()
             break;
     }
- 
+
 }
 
 function myFunction() {
     var element = document.body;
     const boton = document.querySelector('#asdf');
     element.classList.toggle("dark-mode");
-    if(boton.checked){
+    if (boton.checked) {
         $('a').children('div').addClass("dark-mode-icon")
         $('.icon').children('div').addClass("dark-mode-letter")
         $('.icon-inner').children('p').addClass("dark-mode-letter")
         $('.contenedor-icons').addClass("dark-mode-line")
     }
-    if(boton.checked == false){
+    if (boton.checked == false) {
         $('a').children('div').removeClass("dark-mode-icon")
         $('.icon').children('div').removeClass("dark-mode-letter")
         $('.icon-inner').children('p').removeClass("dark-mode-letter")
         $('.contenedor-icons').removeClass("dark-mode-line")
     }
-  }
+}

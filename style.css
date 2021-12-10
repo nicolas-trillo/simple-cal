@@ -298,11 +298,10 @@ body {
 /* dark-mode-boton */
 
 .contenedor-dark-mode input[type="checkbox"] {
-  height: 80px;
-  width: 80px;
+  height: fit-content;
+  width: fit-content;
   -webkit-appearance: none;
   position: absolute;
-  transform: translate(-50%, -50%);
   outline: none;
   display: flex;
   align-items: center;
@@ -333,19 +332,17 @@ body {
 
 .contenedor-toggles {
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 2.5rem;
+  right: 6.5rem;
+  width: fit-content;
   display: flex;
   justify-content: flex-end;
-  padding: 2rem;
-  padding-right: 6rem;
   align-items: center;
   height: fit-content;
 }
 .contenedor-dark-mode {
   width: fit-content;
   height: fit-content;
-  margin-right: 5rem;
 }
 .contenedor-dark-mode *,
 .contenedor-boton * {
